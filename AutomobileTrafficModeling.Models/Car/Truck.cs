@@ -12,17 +12,15 @@ namespace AutomobileTrafficModeling.Models.Car
 
         public Truck(uint cargoWeight = 1000, string name = "truck", byte speed = 40, byte size = 4) : base(name, speed, size)
         {
+            Type = "Truck";
             CargoWeight = cargoWeight;
-        }
 
-        public override Dictionary<string, string> Stats
-        {
-            get
+            Stats = new CarStatistic(Type, Name, new Dictionary<string, long>
             {
-                var res = base.Stats;
-                res.Add(nameof(CargoWeight), $"{CargoWeight} kg");
-                return res;
-            }
+                { nameof(Speed), Speed },
+                { nameof(Size), Size },
+                { nameof(CargoWeight), CargoWeight }
+            });
         }
 
         public override BasicCar Copy() => new Truck(CargoWeight, Name, Speed, Size);

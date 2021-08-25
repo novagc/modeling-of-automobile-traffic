@@ -12,17 +12,15 @@ namespace AutomobileTrafficModeling.Models.Car
 
         public PassengerCar(byte maxPassengerCount = 4, string name = "passenger", byte speed = 50, byte size = 1) : base(name, speed, size)
         {
+            Type = "Passenger";
             MaxPassengerCount = maxPassengerCount;
-        }
 
-        public override Dictionary<string, string> Stats
-        {
-            get
+            Stats = new CarStatistic(Type, Name, new Dictionary<string, long>
             {
-                var res = base.Stats;
-                res.Add(nameof(MaxPassengerCount), $"{MaxPassengerCount} {(MaxPassengerCount == 1 ? "person" : "people")}");
-                return res;
-            }
+                { nameof(Speed), Speed },
+                { nameof(Size), Size },
+                { nameof(MaxPassengerCount), MaxPassengerCount }
+            });
         }
 
         public override BasicCar Copy() => new PassengerCar(MaxPassengerCount, Name, Speed, Size);

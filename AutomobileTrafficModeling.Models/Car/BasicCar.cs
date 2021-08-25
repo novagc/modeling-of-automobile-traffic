@@ -8,7 +8,10 @@ namespace AutomobileTrafficModeling.Models.Car
 {
     public abstract class BasicCar
     {
+        public string Type { get; protected set; }
         public string Name { get; set; }
+
+        public CarStatistic Stats { get; protected set; }
         
         protected byte Speed;
         protected byte Size;
@@ -19,13 +22,6 @@ namespace AutomobileTrafficModeling.Models.Car
             Speed = speed;
             Size = size;
         }
-
-        public virtual Dictionary<string, string> Stats => new Dictionary<string, string>
-        {
-            { nameof(Name), Name },
-            { nameof(Speed), $"{Speed} km/h"},
-            { nameof(Size), $"{Size} m" }
-        };
 
         public abstract BasicCar Copy();
     }
