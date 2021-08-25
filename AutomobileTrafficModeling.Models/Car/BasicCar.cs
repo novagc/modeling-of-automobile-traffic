@@ -12,7 +12,10 @@ namespace AutomobileTrafficModeling.Models.Car
         public string Name { get; set; }
 
         public CarStatistic Stats { get; protected set; }
-        
+     
+        public int WaitingTime { get; protected set; }
+        public int DrivingTime { get; protected set; }
+
         protected byte Speed;
         protected byte Size;
 
@@ -24,5 +27,15 @@ namespace AutomobileTrafficModeling.Models.Car
         }
 
         public abstract BasicCar Copy();
+
+        public virtual void Wait()
+        {
+            WaitingTime++;
+        }
+
+        public virtual void Drive()
+        {
+            DrivingTime++;
+        }
     }
 }
