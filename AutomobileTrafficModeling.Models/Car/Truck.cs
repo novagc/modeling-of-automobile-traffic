@@ -24,5 +24,7 @@ namespace AutomobileTrafficModeling.Models.Car
                 return res;
             }
         }
+
+        public override BasicCar Copy() => new Truck(CargoWeight, Name, Speed, Size);
     }
 }

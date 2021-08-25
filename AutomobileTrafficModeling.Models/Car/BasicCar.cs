@@ -8,7 +8,7 @@ namespace AutomobileTrafficModeling.Models.Car
 {
     public abstract class BasicCar
     {
-        public string Name { get; protected set; }
+        public string Name { get; set; }
         
         protected byte Speed;
         protected byte Size;
@@ -26,5 +26,7 @@ namespace AutomobileTrafficModeling.Models.Car
             { nameof(Speed), $"{Speed} km/h"},
             { nameof(Size), $"{Size} m" }
         };
+
+        public abstract BasicCar Copy();
     }
 }

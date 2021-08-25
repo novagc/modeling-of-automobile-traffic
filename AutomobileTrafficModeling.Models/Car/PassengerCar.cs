@@ -24,5 +24,7 @@ namespace AutomobileTrafficModeling.Models.Car
                 return res;
             }
         }
+
+        public override BasicCar Copy() => new PassengerCar(MaxPassengerCount, Name, Speed, Size);
     }
 }
