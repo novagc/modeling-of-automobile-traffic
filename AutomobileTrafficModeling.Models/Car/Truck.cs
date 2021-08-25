@@ -10,7 +10,7 @@ namespace AutomobileTrafficModeling.Models.Car
     {
         protected uint CargoWeight;
 
-        public Truck(uint cargoWeight, string name = "truck", byte speed = 40, byte size = 4) : base(name, speed, size)
+        public Truck(uint cargoWeight = 1000, string name = "truck", byte speed = 40, byte size = 4) : base(name, speed, size)
         {
             CargoWeight = cargoWeight;
         }

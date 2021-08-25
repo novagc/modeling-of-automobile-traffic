@@ -10,7 +10,7 @@ namespace AutomobileTrafficModeling.Models.Car
     {
         protected byte MaxPassengerCount;
 
-        public PassengerCar(byte maxPassengerCount, string name = "passenger", byte speed = 50, byte size = 1) : base(name, speed, size)
+        public PassengerCar(byte maxPassengerCount = 4, string name = "passenger", byte speed = 50, byte size = 1) : base(name, speed, size)
         {
             MaxPassengerCount = maxPassengerCount;
         }
