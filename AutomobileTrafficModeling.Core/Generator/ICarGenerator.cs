@@ -2,7 +2,7 @@
 
 namespace AutomobileTrafficModeling.Core.Generator
 {
-    interface ICarGenerator
+    public interface ICarGenerator
     {
         public TimesToNextCars TimesToNextCar { get; }
         public GeneratedCarList NextTurn();
