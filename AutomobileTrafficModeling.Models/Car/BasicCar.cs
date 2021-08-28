@@ -1,41 +1,51 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AutomobileTrafficModeling.Models.Car
+﻿namespace AutomobileTrafficModeling.Models.Car
 {
     public abstract class BasicCar
     {
         public string Type { get; protected set; }
         public string Name { get; set; }
-
-        public CarStatistic Stats { get; protected set; }
      
         public int WaitingTime { get; protected set; }
         public int DrivingTime { get; protected set; }
 
-        protected byte Speed;
-        protected byte Size;
+        public byte TimeToRide { get; set; }
+        public RidingDirection Direction { get; set; }
 
-        protected BasicCar(string name, byte speed, byte size)
+        public readonly byte TimeToRideForward;
+        public readonly byte TimeToTurnLeft;
+        public readonly byte TimeToTurnRight;
+
+        public readonly byte Size;
+
+        public abstract CarStatistic Stats { get; }
+
+        protected BasicCar(string name, byte size, byte timeToRideForward, byte timeToTurnLeft, byte timeToTurnRight)
         {
             Name = name;
-            Speed = speed;
             Size = size;
+
+            TimeToRideForward = timeToRideForward;
+            TimeToTurnLeft = timeToTurnLeft;
+            TimeToTurnRight = timeToTurnRight;
+
+            TimeToRide = timeToRideForward;
         }
 
         public abstract BasicCar Copy();
 
-        public virtual void Wait()
+        public virtual void Wait(int time = 1)
         {
-            WaitingTime++;
+            WaitingTime += time;
         }
 
-        public virtual void Drive()
+        public virtual void Ride(int time = 1)
         {
-            DrivingTime++;
+            DrivingTime += time;
+        }
+
+        public virtual bool EndRiding()
+        {
+            return DrivingTime >= TimeToRide;
         }
     }
 }

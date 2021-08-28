@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AutomobileTrafficModeling.Models.TrafficLight
+﻿namespace AutomobileTrafficModeling.Models.TrafficLight
 {
     public struct SimpleTrafficLight
     {
@@ -18,12 +12,12 @@ namespace AutomobileTrafficModeling.Models.TrafficLight
         }
 
         public SimpleTrafficLight(
-            byte horizontalGreenDuration, byte horizontalYellowDuration, byte horizontalLinesCount, byte horizontalLineWidth,
-            byte verticalGreenDuration, byte verticalYellowDuration, byte verticalLinesCount, byte verticalLineWidth
+            byte horizontalGreenDuration, byte horizontalYellowDuration, byte horizontalLineWidth,
+            byte verticalGreenDuration, byte verticalYellowDuration, byte verticalLineWidth
             )
         {
-            HorizontalAxis = new Axis(new TrafficLightDuration(horizontalGreenDuration, horizontalYellowDuration), horizontalLinesCount, horizontalLineWidth);
-            VerticalAxis = new Axis(new TrafficLightDuration(verticalGreenDuration, verticalYellowDuration), verticalLinesCount, verticalLineWidth);
+            HorizontalAxis = new Axis(horizontalLineWidth, new TrafficLightDuration(horizontalGreenDuration, horizontalYellowDuration));
+            VerticalAxis = new Axis(verticalLineWidth, new TrafficLightDuration(verticalGreenDuration, verticalYellowDuration));
         }
     }
 }

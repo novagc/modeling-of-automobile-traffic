@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace AutomobileTrafficModeling.Models.Car
 {
@@ -10,19 +6,18 @@ namespace AutomobileTrafficModeling.Models.Car
     {
         protected uint CargoWeight;
 
-        public Truck(uint cargoWeight = 1000, string name = "truck", byte speed = 40, byte size = 4) : base(name, speed, size)
+        public Truck(uint cargoWeight = 1000, string name = "truck", byte size = 4, 
+            byte timeToRideForward = 10, byte timeToTurnLeft = 10, byte timeToTurnRight = 5) : base(name, size, timeToRideForward, timeToTurnLeft, timeToTurnRight)
         {
             Type = "Truck";
             CargoWeight = cargoWeight;
-
-            Stats = new CarStatistic(Type, Name, new Dictionary<string, long>
-            {
-                { nameof(Speed), Speed },
-                { nameof(Size), Size },
-                { nameof(CargoWeight), CargoWeight }
-            });
         }
 
-        public override BasicCar Copy() => new Truck(CargoWeight, Name, Speed, Size);
+        public override CarStatistic Stats => new CarStatistic(Type, Name, Size, WaitingTime, DrivingTime, Direction, new Dictionary<string, long>
+        {
+            { nameof(CargoWeight), CargoWeight }
+        });
+
+        public override BasicCar Copy() => new Truck(CargoWeight, Name, Size, TimeToRideForward, TimeToTurnLeft, TimeToTurnRight);
     }
 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace AutomobileTrafficModeling.Models.Car
 {
@@ -10,19 +6,18 @@ namespace AutomobileTrafficModeling.Models.Car
     {
         protected byte MaxPassengerCount;
 
-        public PassengerCar(byte maxPassengerCount = 4, string name = "passenger", byte speed = 50, byte size = 1) : base(name, speed, size)
+        public PassengerCar(byte maxPassengerCount = 4, string name = "passenger", byte size = 1, 
+            byte timeToRideForward = 10, byte timeToTurnLeft = 10, byte timeToTurnRight = 5) : base(name, size, timeToRideForward, timeToTurnLeft, timeToTurnRight)
         {
             Type = "Passenger";
             MaxPassengerCount = maxPassengerCount;
-
-            Stats = new CarStatistic(Type, Name, new Dictionary<string, long>
-            {
-                { nameof(Speed), Speed },
-                { nameof(Size), Size },
-                { nameof(MaxPassengerCount), MaxPassengerCount }
-            });
         }
 
-        public override BasicCar Copy() => new PassengerCar(MaxPassengerCount, Name, Speed, Size);
+        public override CarStatistic Stats => new CarStatistic(Type, Name, Size, WaitingTime, DrivingTime, Direction, new Dictionary<string, long>
+        {
+            { nameof(MaxPassengerCount), MaxPassengerCount }
+        });
+
+        public override BasicCar Copy() => new PassengerCar(MaxPassengerCount, Name, Size, TimeToRideForward, TimeToTurnLeft, TimeToTurnRight);
     }
 }
