@@ -78,7 +78,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Label x:Name="label11"  Content="Label" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Slider x:Name="slider11" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Width="130" Maximum="255" Value="10" Orientation="Horizontal" SmallChange="1" LargeChange="5" TickPlacement="None" Minimum="0" IsSnapToTickEnabled="True"/>
+            <Slider x:Name="slider11" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Width="130" Maximum="255" Value="10" Orientation="Horizontal" SmallChange="1" LargeChange="5" TickPlacement="None" Minimum="1" IsSnapToTickEnabled="True"/>
         </Grid>
         <Grid x:Name="grid21" Grid.Column="1" Grid.Row="2">
             <Grid.RowDefinitions>
@@ -86,7 +86,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Label x:Name="label21"  Content="Label" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Slider x:Name="slider21" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Width="130" Maximum="255" Value="10" Orientation="Horizontal" SmallChange="1" LargeChange="5" TickPlacement="None" Minimum="1" IsSnapToTickEnabled="True"/>
+            <Slider x:Name="slider21" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Width="130" Maximum="255" Value="10" Orientation="Horizontal" SmallChange="1" LargeChange="5" TickPlacement="None" IsSnapToTickEnabled="True" Minimum="1"/>
         </Grid>
         <Grid x:Name="grid31" Grid.Column="1" Grid.Row="3">
             <Grid.RowDefinitions>
@@ -94,7 +94,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Label x:Name="label31"  Content="Label" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Slider x:Name="slider31" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Width="130" Maximum="255" Value="10" Orientation="Horizontal" SmallChange="1" LargeChange="5" TickPlacement="None" Minimum="1" IsSnapToTickEnabled="True"/>
+            <Slider x:Name="slider31" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Width="130" Maximum="255" Value="10" Orientation="Horizontal" SmallChange="1" LargeChange="5" TickPlacement="None" IsSnapToTickEnabled="True" Minimum="1"/>
         </Grid>
         <Grid x:Name="grid41" Grid.Column="1" Grid.Row="4">
             <Grid.RowDefinitions>
@@ -102,7 +102,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Label x:Name="label41" Content="Label" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Slider x:Name="slider41" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Width="130" Maximum="255" Value="10" Orientation="Horizontal" SmallChange="1" LargeChange="5" TickPlacement="None" Minimum="1" IsSnapToTickEnabled="True"/>
+            <Slider x:Name="slider41" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Width="130" Maximum="255" Value="10" Orientation="Horizontal" SmallChange="1" LargeChange="5" TickPlacement="None" IsSnapToTickEnabled="True" Minimum="1"/>
         </Grid>
         <Grid x:Name="grid02" Grid.Column="2">
             <Grid.RowDefinitions>
