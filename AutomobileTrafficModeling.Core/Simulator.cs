@@ -56,6 +56,10 @@ namespace AutomobileTrafficModeling.Core
             _down = new TrafficLine();
             _left = new TrafficLine();
             _right = new TrafficLine();
+
+            AllCarsStats = new List<CarStatistic>();
+            TotalEndRidingCarsStats = new Dictionary<string, long>();
+            TotalEndRidingCarsCountByType = new Dictionary<string, int>();
         }
 
         public void Start()
@@ -172,8 +176,8 @@ namespace AutomobileTrafficModeling.Core
             TryToRideForward(firstLine.Waiting.Forward, firstLine.Riding.Forward, secondLine.Riding.Left, _activeTrafficAxis.Width, _timeLeft);
             TryToRideForward(secondLine.Waiting.Forward, secondLine.Riding.Forward, firstLine.Riding.Left, _activeTrafficAxis.Width, _timeLeft);
 
-            TryToTurnRight(firstLine.Waiting.Left, firstLine.Riding.Left, _activeTrafficAxis.Width, _timeLeft);
-            TryToTurnRight(secondLine.Waiting.Left, secondLine.Riding.Left, _activeTrafficAxis.Width, _timeLeft);
+            TryToTurnRight(firstLine.Waiting.Right, firstLine.Riding.Right, _activeTrafficAxis.Width, _timeLeft);
+            TryToTurnRight(secondLine.Waiting.Right, secondLine.Riding.Right, _activeTrafficAxis.Width, _timeLeft);
 
             Wait(firstLine.Waiting.Right);
             Wait(firstLine.Waiting.Forward);
@@ -186,7 +190,7 @@ namespace AutomobileTrafficModeling.Core
 
         private void TryToEndRiding(List<BasicCar> cars)
         {
-            foreach (var car in cars
+            foreach (var car in cars.ToArray()
                 .Where(x =>
                 {
                     x.Ride();
