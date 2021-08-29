@@ -4,6 +4,17 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <Authors />
+    <Company />
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageId>Automobile Traffic Modeller</PackageId>
+    <ApplicationIcon>road.ico</ApplicationIcon>
+    <AssemblyName>AutomobileTrafficModeler</AssemblyName>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AutomobileTrafficModeling.Core\AutomobileTrafficModeling.Core.csproj" />
+    <ProjectReference Include="..\AutomobileTrafficModeling.Models\AutomobileTrafficModeling.Models.csproj" />
+  </ItemGroup>
 
 </Project>
