@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using AutomobileTrafficModeling.Core.Generator.Data;
 using AutomobileTrafficModeling.Models.Car;
 
 namespace AutomobileTrafficModeling.Core.Generator
 {
-    public class AllCarGenerator
+    public class AllCarGenerator: ICarGenerator
     {
         public TimesToNextCars TimesToNextCar { get; }
         public double TruckPart { get; }
@@ -55,39 +50,39 @@ namespace AutomobileTrafficModeling.Core.Generator
             {
                 if (_rnd.NextDouble() <= TruckPart)
                 {
-                    res[0] = _truckExample.Copy();
-                    res[0].Name = $"truck #{_nextTruckIndex++}";
+                    res[1] = _truckExample.Copy();
+                    res[1].Name = $"truck #{_nextTruckIndex++}";
                 }
                 else
                 {
-                    res[0] = _passengerExample.Copy();
-                    res[0].Name = $"passenger #{_nextPassengerCarIndex++}";
+                    res[1] = _passengerExample.Copy();
+                    res[1].Name = $"passenger #{_nextPassengerCarIndex++}";
                 }
             }
             if (TimesToNextCar.Left > 0 && _turn % (ulong)TimesToNextCar.Left == 0)
             {
                 if (_rnd.NextDouble() <= TruckPart)
                 {
-                    res[0] = _truckExample.Copy();
-                    res[0].Name = $"truck #{_nextTruckIndex++}";
+                    res[2] = _truckExample.Copy();
+                    res[2].Name = $"truck #{_nextTruckIndex++}";
                 }
                 else
                 {
-                    res[0] = _passengerExample.Copy();
-                    res[0].Name = $"passenger #{_nextPassengerCarIndex++}";
+                    res[2] = _passengerExample.Copy();
+                    res[2].Name = $"passenger #{_nextPassengerCarIndex++}";
                 }
             }
             if (TimesToNextCar.Right > 0 && _turn % (ulong)TimesToNextCar.Right == 0)
             {
                 if (_rnd.NextDouble() <= TruckPart)
                 {
-                    res[0] = _truckExample.Copy();
-                    res[0].Name = $"truck #{_nextTruckIndex++}";
+                    res[3] = _truckExample.Copy();
+                    res[3].Name = $"truck #{_nextTruckIndex++}";
                 }
                 else
                 {
-                    res[0] = _passengerExample.Copy();
-                    res[0].Name = $"passenger #{_nextPassengerCarIndex++}";
+                    res[3] = _passengerExample.Copy();
+                    res[3].Name = $"passenger #{_nextPassengerCarIndex++}";
                 }
             }
 

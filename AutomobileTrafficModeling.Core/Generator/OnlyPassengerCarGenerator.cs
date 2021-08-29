@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutomobileTrafficModeling.Core.Generator.Data;
+﻿using AutomobileTrafficModeling.Core.Generator.Data;
 using AutomobileTrafficModeling.Models.Car;
 
 namespace AutomobileTrafficModeling.Core.Generator
