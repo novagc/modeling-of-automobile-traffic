@@ -6,7 +6,7 @@
         public string Name { get; set; }
      
         public int WaitingTime { get; protected set; }
-        public int DrivingTime { get; protected set; }
+        public int RidingTime { get; protected set; }
 
         public byte TimeToRide { get; set; }
         public RidingDirection Direction { get; set; }
@@ -40,12 +40,12 @@
 
         public virtual void Ride(int time = 1)
         {
-            DrivingTime += time;
+            RidingTime += time;
         }
 
         public virtual bool EndRiding()
         {
-            return DrivingTime >= TimeToRide;
+            return RidingTime >= TimeToRide;
         }
     }
 }

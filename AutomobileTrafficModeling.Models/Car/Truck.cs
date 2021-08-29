@@ -13,7 +13,7 @@ namespace AutomobileTrafficModeling.Models.Car
             CargoWeight = cargoWeight;
         }
 
-        public override CarStatistic Stats => new CarStatistic(Type, Name, Size, WaitingTime, DrivingTime, Direction, new Dictionary<string, long>
+        public override CarStatistic Stats => new CarStatistic(Type, Name, Size, WaitingTime, RidingTime, Direction, new Dictionary<string, long>
         {
             { nameof(CargoWeight), CargoWeight }
         });
