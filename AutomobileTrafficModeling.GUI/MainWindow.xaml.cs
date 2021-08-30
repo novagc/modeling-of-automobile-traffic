@@ -59,7 +59,7 @@ namespace AutomobileTrafficModeling.GUI
 
         private void generatorComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(generatorComboBox != null && Parameters != null)
+            if (generatorComboBox != null && Parameters != null)
             {
                 var temp = Parameters.Skip(15).Take(6);
                 if (generatorComboBox.SelectedIndex == 0)

@@ -5,7 +5,7 @@ namespace AutomobileTrafficModeling.Core.Generator
 {
     public class OnlyPassengerCarGenerator : ICarGenerator
     {
-        public TimesToNextCars TimesToNextCar { get; set; }
+        public TimesToNextCars TimesToNextCar { get; }
 
         private readonly PassengerCar _passengerExample;
 

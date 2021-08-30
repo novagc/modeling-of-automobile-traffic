@@ -78,8 +78,14 @@ namespace AutomobileTrafficModeling.Core
 
             Generate();
 
-            SimulateRiding(_up, _down);
-            SimulateRiding(_left, _right);
+            if (_activeTrafficAxisIndex == 0)
+            {
+                SimulateRiding(_up, _down);
+            }
+            else
+            {
+                SimulateRiding(_left, _right);
+            }
 
             _timeLeft--;
             TotalTime++;
